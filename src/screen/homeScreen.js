@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   FlatList,
   SafeAreaView,
@@ -8,25 +8,24 @@ import {
   Button,
   TouchableOpacity,
 } from 'react-native';
-import {useDispatch, useSelector, useEffect} from 'react-redux';
-import {AddUser, RemoveData} from '../action/action';
-import axios from 'axios';
-import { getInitialData } from '../thunks/productsThunk';
-
+import {useDispatch, useSelector} from 'react-redux';
+import {getInitialData} from '../thunks/productsThunk';
 
 const DisplayScreen = () => {
   const [name, setName] = useState('');
   const Dispatch = useDispatch();
-  const {isFetching, productData} = useSelector(state => state.todo.products);
+  const {isFetching, productData} = useSelector(state => state.todo);
   const [products, setProducts] = useState('');
 
- useEffect(() => {
-  dispatchEvent(getInitialData());
-  },[]);
-  
+  // useEffect(() => {
+  //   Dispatch(getInitialData());
+  // }, []);
+  const apiCall = () => {
+    Dispatch(getInitialData());
+  };
 
   const ListData = ({item}) => {
-    console.log(Dispatch);
+    // console.log(Dispatch);
     return (
       <TouchableOpacity style={styles.itemRow}>
         <Text>{item.title}</Text>
@@ -34,12 +33,9 @@ const DisplayScreen = () => {
     );
   };
 
- 
-
   return (
     <SafeAreaView style={styles.container}>
-      <Button title="Fetch Data" onPress={getData} />
-
+      <Button title="Fetch Data" onPress={() => apiCall()} />
       <FlatList
         data={productData}
         renderItem={item => ListData(item)}

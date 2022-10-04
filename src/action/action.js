@@ -5,7 +5,6 @@ export  const AddUser = user =>({
     payload: user,
 });
 
-
 export  const RemoveData = user =>({
     type: ActionType.REMOVE_DATA,
     payload: user,

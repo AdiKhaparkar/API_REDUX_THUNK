@@ -6,6 +6,6 @@ const rootReducer = combineReducers({
   todo: TodoReducer,
 });
 
-const store = createStore(rootReducer, applyMiddleware, thunk);
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 export default store;
