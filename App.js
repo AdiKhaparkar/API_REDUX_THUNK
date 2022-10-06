@@ -1,7 +1,7 @@
 import React from 'react';
 import {Provider} from 'react-redux';
-import store from './src/store/store';
-import HomeScreen from './src/screen/homeScreen';
+import store from './src/store/Store';
+import HomeScreen from './src/screen/HomeScreen';
 
 const App = () => {
   return (

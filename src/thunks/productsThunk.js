@@ -1,4 +1,4 @@
-import {ActionType} from '../action/actionType';
+import {ActionType} from '../action/ActionType';
 import axios from 'axios';
 
 export const getInitialData = () => async Dispatch => {

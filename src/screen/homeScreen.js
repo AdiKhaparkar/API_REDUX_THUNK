@@ -1,15 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import {
-  FlatList,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TextInput,
-  Button,
-  TouchableOpacity,
-} from 'react-native';
+import { FlatList, SafeAreaView, StyleSheet, Text, TextInput, Button, TouchableOpacity,} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
-import {getInitialData} from '../thunks/productsThunk';
+import {getInitialData} from '../thunks/ProductsThunk';
 
 const DisplayScreen = () => {
   const [name, setName] = useState('');

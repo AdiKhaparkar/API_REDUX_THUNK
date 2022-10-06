@@ -1,4 +1,4 @@
-import {ActionType} from '../action/actionType';
+import {ActionType} from '../action/ActionType';
 const InitialState = {
   isFetching: false,
   productData: [],

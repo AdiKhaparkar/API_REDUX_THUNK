@@ -1,5 +1,5 @@
 import {combineReducers, applyMiddleware ,createStore} from 'redux';
-import TodoReducer from '../reducer/todo';
+import TodoReducer from '../reducer/Todo';
 import thunk from 'redux-thunk';
 
 const rootReducer = combineReducers({
